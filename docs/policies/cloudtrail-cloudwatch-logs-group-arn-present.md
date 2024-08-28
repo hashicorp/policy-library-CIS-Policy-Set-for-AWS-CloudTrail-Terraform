@@ -4,7 +4,7 @@
 |---------------------|-------------------------|
 | Amazon Web Services | Management & Governance |
 
-# CIS Versions that include this policy
+## CIS Versions that include this policy
 
 | Version | Included |
 |---------|----------|
