@@ -1,4 +1,4 @@
-# AWS Cloudtrail Sentinel Policies for Terraform
+# CIS AWS Cloudtrail Sentinel Policies for Terraform
 This library, provides prescriptive Terraform policies that can be used to establish secure Terraform configuration 
 for Amazon Web Services Cloudtrail Resources included in CIS v1.2.0, v1.4.0 and v3.0.0. 
 The policies that are contained in this library are based on the [CIS Amazon Web Services Benchmarks](https://www.cisecurity.org/benchmark/amazon_web_services). 
