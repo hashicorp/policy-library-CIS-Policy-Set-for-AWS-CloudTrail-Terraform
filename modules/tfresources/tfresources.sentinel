@@ -10,7 +10,7 @@ func by_type(resources, type) {
 		"mode": func(mode) {
 			filtered_resources = filter_by_property(resources, "type", type)
 			return {
-			    "resources": filter_by_property(filtered_resources, "mode", mode),
+				"resources": filter_by_property(filtered_resources, "mode", mode),
 			}
 		},
 	}
@@ -30,7 +30,7 @@ func by_mode(resources, mode) {
 		"address": func(addr) {
 			filtered_resources = filter_by_property(resources, "mode", mode)
 			return {
-			    "resources": filter_by_property(filtered_resources, "address", addr),
+				"resources": filter_by_property(filtered_resources, "address", addr),
 			}
 		},
 	}
