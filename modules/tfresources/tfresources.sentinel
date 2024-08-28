@@ -1,41 +1,33 @@
+func filter_by_property(resources, property, value) {
+	return filter resources as _, r {
+		r[property] is value
+	}
+}
+
 func by_type(resources, type) {
-	return {"resources": filter resources as _, r {
-		r.type is type
-	},
+	return {
+		"resources": filter_by_property(resources, "type", type),
 		"mode": func(mode) {
-			return {
-				"resources": filter resources as _, r {
-					r.type is type and r.mode is mode
-				},
-			}
+			filtered_resources = filter_by_property(resources, "type", type)
+			return filter_by_property(filtered_resources, "mode", mode)
 		},
 	}
 }
 
 func by_address(resources, addr) {
-	return {"resources": filter resources as _, r {
-		r.address is addr
-	},
-	}
+	return {"resources": filter_by_property(resources, "address", addr)}
 }
 
 func by_name(resources, name) {
-	return {"resources": filter resources as _, r {
-		r.name is name
-	},
-	}
+	return {"resources": filter_by_property(resources, "name", name)}
 }
 
 func by_mode(resources, mode) {
-	return {"resources": filter resources as _, r {
-		r.mode is mode
-	},
+	return {
+		"resources": filter_by_property(resources, "mode", mode),
 		"address": func(addr) {
-			return {
-				"resources": filter resources as _, r {
-					r.mode is mode and r.address is addr
-				},
-			}
+			filtered_resources = filter_by_property(resources, "mode", mode)
+			return filter_by_property(filtered_resources, "address", addr)
 		},
 	}
 }
