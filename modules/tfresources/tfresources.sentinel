@@ -1,0 +1,99 @@
+func by_type(resources, type) {
+	return {"resources": filter resources as _, r {
+		r.type is type
+	},
+		"mode": func(mode) {
+			return {
+				"resources": filter resources as _, r {
+					r.type is type and r.mode is mode
+				},
+			}
+		},
+	}
+}
+
+func by_address(resources, addr) {
+	return {"resources": filter resources as _, r {
+		r.address is addr
+	},
+	}
+}
+
+func by_name(resources, name) {
+	return {"resources": filter resources as _, r {
+		r.name is name
+	},
+	}
+}
+
+func by_mode(resources, mode) {
+	return {"resources": filter resources as _, r {
+		r.mode is mode
+	},
+		"address": func(addr) {
+			return {
+				"resources": filter resources as _, r {
+					r.mode is mode and r.address is addr
+				},
+			}
+		},
+	}
+}
+
+func get_values(m) {
+	return map m as _, val { val }
+}
+
+func config(resources) {
+	resources = get_values(resources)
+	return {
+		"type": func(type) {
+			return by_type(resources, type)
+		},
+		"mode": func(mode) {
+			return by_mode(resources, mode)
+		},
+		"name": func(name) {
+			return by_name(resources, name)
+		},
+		"address": func(addr) {
+			return by_address(resources, addr)
+		},
+	}
+}
+
+func plan(resources) {
+	resources = get_values(resources)
+	return {
+		"type": func(type) {
+			return by_type(resources, type)
+		},
+		"mode": func(mode) {
+			return by_mode(resources, mode)
+		},
+		"name": func(name) {
+			return by_name(resources, name)
+		},
+		"address": func(addr) {
+			return by_address(resources, addr)
+		},
+	}
+}
+
+func state(resources) {
+	resources = get_values(resources)
+	return {
+		"type": func(type) {
+			return by_type(resources, type)
+		},
+		"mode": func(mode) {
+			return by_mode(resources, mode)
+		},
+		"name": func(name) {
+			return by_name(resources, name)
+		},
+		"address": func(addr) {
+			return by_address(resources, addr)
+		},
+	}
+}
