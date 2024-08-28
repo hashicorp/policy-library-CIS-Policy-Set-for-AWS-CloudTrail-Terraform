@@ -20,8 +20,7 @@ func by_address(resources, addr) {
 }
 
 func by_name(resources, name) {
-	return {"resources": filter_by_property(resources, "name", name),
-	}
+	return {"resources": filter_by_property(resources, "name", name)}
 }
 
 func by_mode(resources, mode) {
