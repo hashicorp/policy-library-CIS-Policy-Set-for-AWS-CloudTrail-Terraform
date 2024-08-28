@@ -2,6 +2,10 @@ import "module" "report" {
   source = "./modules/report/report.sentinel"
 }
 
+import "module" "tfresources" {
+  source = "./modules/tfresources/tfresources.sentinel"
+}
+
 policy "cloudtrail-server-side-encryption-enabled" {
     source = "./policies/cloudtrail-server-side-encryption-enabled.sentinel"
     enforcement_level = "advisory"
