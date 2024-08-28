@@ -6,11 +6,11 @@
 
 # CIS Versions that include this policy
 
-| Version | Included           |
-|---------|--------------------|
-| 1.2.0   | :heavy_check_mark: |
-| 1.4.0   | :heavy_check_mark: |
-| 3.0.0   | :heavy_check_mark: |
+| Version | Included |
+|---------|----------|
+| 1.2.0   | &check;  |
+| 1.4.0   | &check;  |
+| 3.0.0   | &check;  |
 
 ## Description
 
