@@ -4,7 +4,7 @@
 
 This document provides guidance on contribution recommended practices. It covers what we're looking for in order to help set some expectations and help you get the most out of participation in this project.
 
-To record a bug report, enhancement proposal, or give any other product feedback, please [open a GitHub issue](https://github.com/hashicorp/policy-library-cloudtrail-networking-terraform/issues/new/choose) using the most appropriate issue template. 
+To record a bug report, enhancement proposal, or give any other product feedback, please [open a GitHub issue](https://github.com/hashicorp/policy-library-cloudtrail-terraform/issues/new/choose) using the most appropriate issue template. 
 Please do fill in all of the information the issue templates request, because know from experience that this will maximize the chance that we'll be able to act on your feedback.
 
 ---
@@ -18,27 +18,35 @@ Please do fill in all of the information the issue templates request, because kn
         - [Getting Your Pull Requests Merged Faster](#getting-your-pull-requests-merged-faster)
     - [PR Checks](#pr-checks)
 - [Sentinel Development Environment](#sentinel-development-environment)
-- [Generating Code](#generating-code)
 
 <!-- /MarkdownTOC -->
 
 ## Proposing a Change
 
-In order to be respectful of the time of contributors, we aim to discuss potential changes in GitHub issues prior to implementation. That will allow us to give design feedback up front and set expectations about the scope of the change, and, for larger changes, how best to approach the work such that the Terraform Compliance team can review it and merge it along with other concurrent work.
+In order to be respectful of the time of contributors, we aim to discuss potential changes in GitHub issues prior to implementation. 
+That will allow us to give design feedback up front and set expectations about the scope of the change, and, 
+for larger changes, how best to approach the work such that the Policy team can review it and merge it along with other concurrent work.
 
-If the bug you wish to fix or enhancement you wish to implement isn't already covered by a GitHub issue that contains feedback from the Terraform Compliance team, please do start a discussion (either in [a new GitHub issue](https://github.com/hashicorp/policy-library-aws-networking-terraform/issues/new/choose) or an existing one, as appropriate) before you invest significant development time. If you mention your intent to implement the change described in your issue, the Terraform Compliance team can, as best as possible, prioritize including implementation-related feedback in the subsequent discussion.
+If the bug you wish to fix or enhancement you wish to implement isn't already covered by a GitHub issue that 
+contains feedback from the Policy team, please do start a discussion 
+(either in [a new GitHub issue](https://github.com/hashicorp/policy-library-aws-cloudtrail-terraform/issues/new/choose) or an existing one, as appropriate) 
+before you invest significant development time. If you mention your intent to implement the change described in your issue, the Policy team can, as best as possible, 
+prioritize including implementation-related feedback in the subsequent discussion.
 
-At this time, we do not have a formal process for reviewing outside proposals that significantly change the Sentinel policy workflow, its primary usage patterns, and its language. For large proposals that could entail a significant investment, we wish to be up front with potential contributors that, unfortunately, we are unlikely to be able to give prompt feedback. We are still interested in hearing about your use-cases so that we can consider ways to meet them as part of other larger projects.
+At this time, we do not have a formal process for reviewing outside proposals that significantly change the Sentinel policy workflow, 
+its primary usage patterns, and its language. For large proposals that could entail a significant investment, 
+we wish to be up front with potential contributors that, unfortunately, we are unlikely to be able to give prompt feedback. 
+We are still interested in hearing about your use-cases so that we can consider ways to meet them as part of other larger projects.
 
-Most changes will involve updates to the test suite, and changes to the policy library documentation. The Terraform Compliance team can advise on different testing strategies for specific scenarios, and may ask you to revise the specific phrasing of your proposed documentation prose to match better with the standard "voice" of the documentation.
-
-This repository is primarily maintained by a small team at HashiCorp along with their other responsibilities, so unfortunately we cannot always respond promptly to pull requests, particularly if they do not relate to an existing GitHub issue where the Terraform Compliance team has already participated and indicated willingness to work on the issue or accept PRs for the proposal. We *are* grateful for all contributions however, and will give feedback on pull requests as soon as we're able so please bear with us.
+Most changes will involve updates to the test suite, and changes to the policy library documentation. 
+The Policy team can advise on different testing strategies for specific scenarios, 
+and may ask you to revise the specific phrasing of your proposed documentation prose to match better with the standard "voice" of the documentation.
 
 ### Pull Request Lifecycle
 
 1. You are welcome to submit a [draft pull request](https://github.blog/2019-02-14-introducing-draft-pull-requests/) for commentary or review before it is fully completed. It's also a good idea to include specific questions or items you'd like feedback on.
 2. Once you believe your pull request is ready to be merged you can create your pull request.
-3. When time permits the Terraform Compliance team members will look over your contribution and either merge, or provide comments letting you know if there is anything left to do. It may take some time for us to respond. We may also have questions that we need answered about the code, either because something doesn't make sense to us or because we want to understand your thought process. We kindly ask that you do not target specific team members.
+3. When time permits the Policy team members will look over your contribution and either merge, or provide comments letting you know if there is anything left to do. It may take some time for us to respond. We may also have questions that we need answered about the code, either because something doesn't make sense to us or because we want to understand your thought process. We kindly ask that you do not target specific team members.
 4. If we have requested changes, you can either make those changes or, if you disagree with the suggested changes, we can have a conversation about our reasoning and agree on a path forward. This may be a multi-step process. Our view is that pull requests are a chance to collaborate, and we welcome conversations about how to do things better. It is the contributor's responsibility to address any changes requested. While reviewers are happy to give guidance, it is unsustainable for us to perform the coding work necessary to get a PR into a mergeable state.
 5. Once all outstanding comments and checklist items have been addressed, your contribution will be merged.
 6. In some cases, we might decide that a PR should be closed without merging. We'll make sure to provide clear reasoning when this happens. Following the recommended process above is one of the ways to ensure you don't spend time on a PR we can't or won't merge.
@@ -75,7 +83,7 @@ Use Git to clone this repository into a location of your choice.
 Switch into the root directory of the cloned repository and ensure that the Sentinel CLI is working as expected:
 
 ```
-cd policy-library-aws-networking-terraform
+cd policy-library-aws-cloudtrail-terraform
 sentinel version
 ```
 
@@ -85,30 +93,4 @@ If you are planning to make changes to the library, you should run the Sentinel 
 make tests
 ```
 
-As you make your changes, you can re-run the above command to ensure that the tests are *still* passing. If you are working only on a specific policy, you can speed up your testing cycle by testing only that single policy:
-
-```
-make test name=only-approved-extensions-are-installed.sentinel
-```
-
 The test suite for the library is self-contained, using Sentinel [mocks](https://docs.hashicorp.com/sentinel/writing/testing#mocking) and local files to help ensure that it can run offline and is unlikely to be broken by changes to outside systems. For now there are no components that interact with external services, and therefore there should be no need to mock any of the Sentinel standard library imports.
-
-## Code Generation
-
-Sentinel is opinionated about the [folder structure](https://docs.hashicorp.com/sentinel/writing/testing#test-folder-structure) that is required for tests. To make things easier, we have added the ability to generate this file and folder structure on demand. All that is required is that you execute the following command and provide the name of your policy:
-
-```
-make generate name=deny-old-module-versions
-```
-
-> **Important**
->
-> Make names lowercase. Use hyphens, not underscores, to separate words—for example, `deny-old-module-versions`. Use
-> only standard ASCII alphanumeric characters in the name.
->
-> Don't use generic names such as `policy`, and ensure that the name describes what the policy is doing.
-
-
-Use `git diff` afterwards to inspect the changes and ensure that they are what you expected.
-
----
