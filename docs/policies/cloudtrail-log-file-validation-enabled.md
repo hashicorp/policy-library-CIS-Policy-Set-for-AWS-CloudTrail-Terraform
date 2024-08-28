@@ -4,6 +4,14 @@
 |---------------------|-------------------------|
 | Amazon Web Services | Management & Governance |
 
+# CIS Versions that include this policy
+
+| Version | Included |
+|---------|----------|
+| 1.2.0   | [x]      |
+| 1.4.0   | [x]      |
+| 3.0.0   | [x]      |
+
 ## Description
 
 CIS recommends for every Cloudtrail log file integrity validation is enabled. 

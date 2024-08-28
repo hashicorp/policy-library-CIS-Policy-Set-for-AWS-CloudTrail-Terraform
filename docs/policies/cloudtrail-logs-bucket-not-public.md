@@ -4,6 +4,14 @@
 |---------------------|----------|
 | Amazon Web Services | Security |
 
+# CIS Versions that include this policy
+
+| Version | Included |
+|---------|----------|
+| 1.2.0   | [x]      |
+| 1.4.0   | [x]      |
+| 3.0.0   | [ ]      |
+
 ## Description
 
 DISCLAIMER - This policy works when all resources of type (aws_cloudtrail, aws_s3_bucket_public_access_block) are in the root module
