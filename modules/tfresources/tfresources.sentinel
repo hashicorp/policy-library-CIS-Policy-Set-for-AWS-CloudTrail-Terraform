@@ -44,7 +44,7 @@ func get_values(m) {
 	return map m as _, val { val }
 }
 
-func config(resources) {
+func get_filters(resources) {
 	resources = get_values(resources)
 	return {
 		"type": func(type) {
@@ -60,40 +60,15 @@ func config(resources) {
 			return by_address(resources, addr)
 		},
 	}
+}
+func config(resources) {
+	return get_filters(resources)
 }
 
 func plan(resources) {
-	resources = get_values(resources)
-	return {
-		"type": func(type) {
-			return by_type(resources, type)
-		},
-		"mode": func(mode) {
-			return by_mode(resources, mode)
-		},
-		"name": func(name) {
-			return by_name(resources, name)
-		},
-		"address": func(addr) {
-			return by_address(resources, addr)
-		},
-	}
+	return get_filters(resources)
 }
 
 func state(resources) {
-	resources = get_values(resources)
-	return {
-		"type": func(type) {
-			return by_type(resources, type)
-		},
-		"mode": func(mode) {
-			return by_mode(resources, mode)
-		},
-		"name": func(name) {
-			return by_name(resources, name)
-		},
-		"address": func(addr) {
-			return by_address(resources, addr)
-		},
-	}
+	return get_filters(resources)
 }
