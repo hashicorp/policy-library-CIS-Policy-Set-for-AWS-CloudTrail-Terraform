@@ -4,7 +4,7 @@
 |---------------------|----------|
 | Amazon Web Services | Security |
 
-# CIS Versions that include this policy
+## CIS versions that include this policy
 
 | Version | Included |
 |---------|----------|
