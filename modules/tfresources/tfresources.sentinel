@@ -5,7 +5,8 @@ func filter_by_property(resources, property, value) {
 }
 
 func by_type(resources, type) {
-	return {"resources": filter_by_property(resources, "type", type),
+	return {
+		"resources": filter_by_property(resources, "type", type),
 		"mode": func(mode) {
 			filtered_resources = filter_by_property(resources, "type", type)
 			return filter_by_property(filtered_resources, "mode", mode)
@@ -14,9 +15,7 @@ func by_type(resources, type) {
 }
 
 func by_address(resources, addr) {
-	return {
-		"resources": filter_by_property(resources, "address", addr),
-	}
+	return {"resources": filter_by_property(resources, "address", addr)}
 }
 
 func by_name(resources, name) {
@@ -24,7 +23,8 @@ func by_name(resources, name) {
 }
 
 func by_mode(resources, mode) {
-	return {"resources": filter_by_property(resources, "mode", mode),
+	return {
+		"resources": filter_by_property(resources, "mode", mode),
 		"address": func(addr) {
 			filtered_resources = filter_by_property(resources, "mode", mode)
 			return filter_by_property(filtered_resources, "address", addr)
