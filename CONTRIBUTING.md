@@ -4,7 +4,7 @@
 
 This document provides guidance on contribution recommended practices. It covers what we're looking for in order to help set some expectations and help you get the most out of participation in this project.
 
-To record a bug report, enhancement proposal, or give any other product feedback, please [open a GitHub issue](https://github.com/hashicorp/policy-library-cloudtrail-terraform/issues/new/choose) using the most appropriate issue template. 
+To record a bug report, enhancement proposal, or give any other product feedback, please [open a GitHub issue](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/issues/new/choose) using the most appropriate issue template. 
 Please do fill in all of the information the issue templates request, because know from experience that this will maximize the chance that we'll be able to act on your feedback.
 
 ---
