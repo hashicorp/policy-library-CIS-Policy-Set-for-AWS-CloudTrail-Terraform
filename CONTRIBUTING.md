@@ -29,7 +29,7 @@ for larger changes, how best to approach the work such that the Policy team can 
 
 If the bug you wish to fix or enhancement you wish to implement isn't already covered by a GitHub issue that 
 contains feedback from the Policy team, please do start a discussion 
-(either in [a new GitHub issue](https://github.com/hashicorp/policy-library-aws-cloudtrail-terraform/issues/new/choose) or an existing one, as appropriate) 
+(either in [a new GitHub issue](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/issues/new/choose) or an existing one, as appropriate) 
 before you invest significant development time. If you mention your intent to implement the change described in your issue, the Policy team can, as best as possible, 
 prioritize including implementation-related feedback in the subsequent discussion.
 
@@ -83,7 +83,7 @@ Use Git to clone this repository into a location of your choice.
 Switch into the root directory of the cloned repository and ensure that the Sentinel CLI is working as expected:
 
 ```
-cd policy-library-aws-cloudtrail-terraform
+cd policy-library-cis-aws-cloudtrail-terraform
 sentinel version
 ```
 
