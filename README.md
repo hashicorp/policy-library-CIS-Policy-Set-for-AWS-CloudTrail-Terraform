@@ -21,3 +21,9 @@ The following CIS standards have equivalent Sentinel policies written for them. 
 - [cloudtrail-log-file-validation-enabled](./docs/policies/cloudtrail-log-file-validation-enabled.md)
 - [cloudtrail-logs-bucket-not-public](./docs/policies/cloudtrail-logs-bucket-not-public.md)
 - [cloudtrail-server-side-encryption-enabled](./docs/policies/cloudtrail-server-side-encryption-enabled.md)
+
+### Minimum Sentinel Version Required
+
+```pre
+0.26.x
+```
