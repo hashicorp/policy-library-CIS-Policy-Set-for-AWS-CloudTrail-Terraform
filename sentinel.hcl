@@ -1,8 +1,8 @@
-import "module" "report" {
+module "report" {
   source = "./modules/report/report.sentinel"
 }
 
-import "module" "tfresources" {
+module "tfresources" {
   source = "./modules/tfresources/tfresources.sentinel"
 }
 
