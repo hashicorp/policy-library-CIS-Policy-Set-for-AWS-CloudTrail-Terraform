@@ -1,8 +1,0 @@
-// Placeholder for a sentinel policy.
-// Replace this with your actual policy logic.
-
-import "tfplan/v2" as tfplan
-
-main = rule {
-	true
-}
