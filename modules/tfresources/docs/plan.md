@@ -1,6 +1,7 @@
 # plan
 
 This function takes in input the map of maps (map of resources) and returns a map with following keys.
+
 **type(string)**
 
 type will return a map with "resources" and "mode" key
