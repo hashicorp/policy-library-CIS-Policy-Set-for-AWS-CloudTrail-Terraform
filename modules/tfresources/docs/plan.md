@@ -1,43 +1,34 @@
 # plan
+
 This function takes in input the map of maps (map of resources) and returns a map with following keys.
+**type(string)**
 
-```text
-type
-mode 
-name
-address
-```
+type will return a map with "resources" and "mode" key
+- "resources" will have array of resources filtered by the type given in
+  the input parameter.
+- "mode" key will have a function and can be further invoked with a parameter(string)
+  to return a map with key "resources" (filtered by mode given in the input)
 
-Each of the key is a function which can be invoked by a parameter (string) and returns the map with keys as listed below.
 
-```text
-type will return a map with "resources" and "mode" key 
-    - "resources" will have array of resources filtered by the type given in
-the input parameter. 
-    - "mode" key will have a function and can be further invoked with a parameter(string) 
-to return a map with key "resources" (filtered by mode given in the input)
-```
+**mode(string)**
 
-```text
-mode will return a map with "resources" and "address" key 
-    - "resources" will have array of resources filtered by the mode given in
-the input parameter. 
-    - "address" key will have a function and can be further invoked with a parameter(string)
-to return a map with key "resources" (filtered by address given in the input)
-```
+mode will return a map with "resources" and "address" key
+- "resources" will have array of resources filtered by the mode given in
+  the input parameter.
+- "address" key will have a function and can be further invoked with a parameter(string)
+  to return a map with key "resources" (filtered by address given in the input)
 
-```text
-name will have "resources" key 
-    - "resources" will have array of resources filtered by name given in the 
+**name(string)**
+
+name will have "resources" key
+- "resources" will have array of resources filtered by name given in the
+  input parameter.
+
+**address(string)**
+
+address will have "resources" key
+- "resources" will have array of resources filtered by address given in the
 input parameter.
-```
-
-```text
-address will have "resources" key 
-    - "resources" will have array of resources filtered by address given in the 
-input parameter.
-```
-
 
 ## Sentinel Module
 This function is contained in the [tfresources.sentinel](../tfresources.sentinel) module.
