@@ -27,30 +27,32 @@ resolve_s3_bucket_name = func(bucket_exp, module_address) {
 	if bucket_exp is null {
 		return ""
 	}
-	if bucket_exp[const.constant_value] is defined {
+	if maps.get(bucket_exp, const.constant_value, "") is not empty {
 		return bucket_exp[const.constant_value]
-	} else if bucket_exp["references"] is defined {
+	} else if maps.get(bucket_exp, "references", []) is not empty {
 		# Example References - bucket_exp["references"] = ["aws_s3_bucket.bucket.id", "aws_s3_bucket.bucket"]
 		# We get the resource from the address which is the second element in the references array
 		if (length(bucket_exp["references"]) < 2) {
 			return ""
 		}
-		bucket_addr = bucket_exp["references"][1]
+		if length(maps.get(bucket_exp, "references", [])) > 0 {
+			bucket_addr = bucket_exp["references"][1]
 
-		// We don't support variable/locals based references
-		if bucket_addr is not defined {
-			return ""
-		}
+			// We don't support variable/locals based references
+			if bucket_addr is not defined {
+				return ""
+			}
 
-		// Prefix the module address with the bucket address
-		// to make stuff work for nested modules
-		if module_address is not "" {
-			bucket_addr = module_address + "." + bucket_addr
-		}
+			// Prefix the module address with the bucket address
+			// to make stuff work for nested modules
+			if module_address is not "" {
+				bucket_addr = module_address + "." + bucket_addr
+			}
 
-		bucket_res = tf.config(tfconfig.resources).address(bucket_addr).resources
-		if bucket_res is not empty {
-			return maps.get(bucket_res[0], "config.bucket.constant_value", "")
+			bucket_res = tf.config(tfconfig.resources).address(bucket_addr).resources
+			if bucket_res is not empty {
+				return maps.get(bucket_res[0], "config.bucket.constant_value", "")
+			}
 		}
 	}
 	return ""
@@ -64,14 +66,14 @@ cloudtrail_resources = config_resources.type(const.resource_aws_cloudtrail).reso
 access_log_enabled_bucket_list = []
 aws_s3_bucket_logging_resources = config_resources.type(const.resource_s3_bucket_logging).resources
 for aws_s3_bucket_logging_resources as _, res {
-	bucket_name = resolve_s3_bucket_name(res.config["bucket"], res.module_address)
+	bucket_name = resolve_s3_bucket_name(maps.get(res, "config.bucket", {}), res.module_address)
 	if bucket_name is not empty {
 		append(access_log_enabled_bucket_list, bucket_name)
 	}
 }
 
 violations = collection.reject(cloudtrail_resources, func(res) {
-	bucket_name = resolve_s3_bucket_name(res.config["s3_bucket_name"], res.module_address)
+	bucket_name = resolve_s3_bucket_name(maps.get(res, "config.s3_bucket_name", {}), res.module_address)
 	return bucket_name is empty or bucket_name in access_log_enabled_bucket_list
 })
 
