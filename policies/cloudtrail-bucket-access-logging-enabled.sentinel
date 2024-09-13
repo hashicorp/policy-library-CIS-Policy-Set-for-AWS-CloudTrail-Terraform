@@ -66,14 +66,14 @@ cloudtrail_resources = config_resources.type(const.resource_aws_cloudtrail).reso
 access_log_enabled_bucket_list = []
 aws_s3_bucket_logging_resources = config_resources.type(const.resource_s3_bucket_logging).resources
 for aws_s3_bucket_logging_resources as _, res {
-	bucket_name = resolve_s3_bucket_name(maps.get(res, "config.bucket", ""), res.module_address)
+	bucket_name = resolve_s3_bucket_name(maps.get(res, "config.bucket", {}), res.module_address)
 	if bucket_name is not empty {
 		append(access_log_enabled_bucket_list, bucket_name)
 	}
 }
 
 violations = collection.reject(cloudtrail_resources, func(res) {
-	bucket_name = resolve_s3_bucket_name(maps.get(res, "config.s3_bucket_name", ""), res.module_address)
+	bucket_name = resolve_s3_bucket_name(maps.get(res, "config.s3_bucket_name", {}), res.module_address)
 	return bucket_name is empty or bucket_name in access_log_enabled_bucket_list
 })
 
