@@ -27,9 +27,9 @@ resolve_s3_bucket_name = func(bucket_exp, module_address) {
 	if bucket_exp is null {
 		return ""
 	}
-	if bucket_exp[const.constant_value] is defined {
+	if maps.get(bucket_exp, const.constant_value, "") is not empty {
 		return bucket_exp[const.constant_value]
-	} else if bucket_exp["references"] is defined {
+	} else if maps.get(bucket_exp, "references", []) is not empty {
 		# Example References - bucket_exp["references"] = ["aws_s3_bucket.bucket.id", "aws_s3_bucket.bucket"]
 		# We get the resource from the address which is the second element in the references array
 		if (length(bucket_exp["references"]) < 2) {
@@ -72,7 +72,7 @@ compliant_s3_bucket_public_access_block_resources = collection.reject(s3_bucket_
 private_bucket_names = []
 
 for compliant_s3_bucket_public_access_block_resources as _, res {
-	bucket_name = resolve_s3_bucket_name(res.config["bucket"], res.module_address)
+	bucket_name = resolve_s3_bucket_name(maps.get(res, "config.bucket", {}), res.module_address)
 	if bucket_name is not empty {
 		append(private_bucket_names, bucket_name)
 	}
@@ -80,7 +80,7 @@ for compliant_s3_bucket_public_access_block_resources as _, res {
 
 resources = config_resources.type(const.resource_aws_cloudtrail).resources
 violations = collection.reject(resources, func(res) {
-	bucket_name = resolve_s3_bucket_name(res.config["s3_bucket_name"], res.module_address)
+	bucket_name = resolve_s3_bucket_name(maps.get(res, "config.s3_bucket_name", {}), res.module_address)
 	return bucket_name is empty or bucket_name in private_bucket_names
 })
 
