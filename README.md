@@ -96,11 +96,11 @@ The documentation for the policy libraries consists of Markdown files within thi
 
 The following CIS standards have equivalent Sentinel policies written for them. These policies get enforced between the `plan` and `apply` phase whenever a run gets queued in TFC/TFE.
 
-- [cloudtrail-bucket-access-logging-enabled]
-- [cloudtrail-cloudwatch-logs-group-arn-present]
-- [cloudtrail-log-file-validation-enabled]
-- [cloudtrail-logs-bucket-not-public]
-- [cloudtrail-server-side-encryption-enabled]
+- cloudtrail-bucket-access-logging-enabled
+- cloudtrail-cloudwatch-logs-group-arn-present
+- cloudtrail-log-file-validation-enabled
+- cloudtrail-logs-bucket-not-public
+- cloudtrail-server-side-encryption-enabled
 
 ### Minimum Sentinel Version Required
 
