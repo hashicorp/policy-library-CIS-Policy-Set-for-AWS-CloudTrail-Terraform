@@ -6,7 +6,7 @@ At HashiCorp, we’re committed to making policy management easier for our custo
 
 This repository contains several policy libraries designed to accelerate the adoption of the CIS AWS Foundations Benchmark within HCP Terraform. These libraries can be utilized to enforce best practices and security standards across your AWS environment.
 
-For more details on how to work with these policies and to understand the Sentinel language and framework, please refer to the [Sentinel documentation](https://developer.hashicorp.com/sentinel/) or the README documentation included with each of the policy [libraries](./docs/policies).
+For more details on how to work with these policies and to understand the Sentinel language and framework, please refer to the [Sentinel documentation](https://developer.hashicorp.com/sentinel/) or the README documentation included with each of the policy [libraries](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/docs/policies).
 
 ## Feedback
 
@@ -20,11 +20,11 @@ We aim to validate the effectiveness of our policies by collecting diverse user 
 
 ### Policies Included
 
-- cloudtrail-bucket-access-logging-enabled ([docs](./docs/policies/cloudtrail-bucket-access-logging-enabled.md) | [code](./policies/cloudtrail-bucket-access-logging-enabled.sentinel))
-- cloudtrail-cloudwatch-logs-group-arn-present ([docs](./docs/policies/cloudtrail-cloudwatch-logs-group-arn-present.md) | [code](./policies/cloudtrail-cloudwatch-logs-group-arn-present.sentinel))
-- cloudtrail-log-file-validation-enabled ([docs](./docs/policies/cloudtrail-log-file-validation-enabled.md) | [code](./policies/cloudtrail-log-file-validation-enabled.sentinel))
-- cloudtrail-logs-bucket-not-public ([docs](./docs/policies/cloudtrail-logs-bucket-not-public.md) | [code](./policies/cloudtrail-logs-bucket-not-public.sentinel))
-- cloudtrail-server-side-encryption-enabled ([docs](./docs/policies/cloudtrail-server-side-encryption-enabled.md) | [code](./policies/cloudtrail-server-side-encryption-enabled.sentinel))
+- cloudtrail-bucket-access-logging-enabled ([docs](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/docs/policies/cloudtrail-bucket-access-logging-enabled.md) | [code](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/policies/cloudtrail-bucket-access-logging-enabled.sentinel))
+- cloudtrail-cloudwatch-logs-group-arn-present ([docs](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/docs/policies/cloudtrail-cloudwatch-logs-group-arn-present.md) | [code](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/policies/cloudtrail-cloudwatch-logs-group-arn-present.sentinel))
+- cloudtrail-log-file-validation-enabled ([docs](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/docs/policies/cloudtrail-log-file-validation-enabled.md) | [code](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/policies/cloudtrail-log-file-validation-enabled.sentinel))
+- cloudtrail-logs-bucket-not-public ([docs](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/docs/policies/cloudtrail-logs-bucket-not-public.md) | [code](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/policies/cloudtrail-logs-bucket-not-public.sentinel))
+- cloudtrail-server-side-encryption-enabled ([docs](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/docs/policies/cloudtrail-server-side-encryption-enabled.md) | [code](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/policies/cloudtrail-server-side-encryption-enabled.sentinel))
 
 ## Getting Started
 
