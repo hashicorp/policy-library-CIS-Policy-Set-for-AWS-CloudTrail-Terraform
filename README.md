@@ -62,7 +62,7 @@ To learn more about how to configure a policy set as a [policy evaluation](https
 
 ## Documentation
 
-The documentation for the policy libraries consists of Markdown files within this GitHub repository. The Markdown documents are organized in the following locations within each [library](./libraries/):
+The documentation for the policy libraries consists of Markdown files within this GitHub repository. The Markdown documents are organized in the following locations within each [library](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/docs):
 
 | Location       | Filename           | Description                            |
 |----------------|--------------------|----------------------------------------|
