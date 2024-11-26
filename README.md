@@ -60,19 +60,6 @@ The policies in each library are opinionated and depend on several Sentinel modu
 >
 To learn more about how to configure a policy set as a [policy evaluation](https://developer.hashicorp.com/terraform/cloud-docs/policy-enforcement/manage-policy-sets#policy-evaluations), please review the Terraform Enterprise provider [documentation](https://registry.terraform.io/providers/hashicorp/tfe/latest/docs/resources/policy_set#agent_enabled).
 
-## Documentation
-
-The documentation for the policy libraries consists of Markdown files within this GitHub repository. The Markdown documents are organized in the following locations within each [library](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/docs):
-
-| Location       | Filename           | Description                            |
-|----------------|--------------------|----------------------------------------|
-| /              | README.md          | Index page for the policy library.     |
-| docs/policies/ | <policy name\>.md  | Description of a single policy.        |
-| docs/modules/  | <module name\>.md  | Description of a single policy module. |
-
-> **Note:** The <policy_name> and <module_name> in the Markdown filenames correspond to the names specified for each policy and module block in the library’s sentinel.hcl file.
-
-
 ## Resources
 
 - [Get Started - HCP Terraform](https://developer.hashicorp.com/terraform/tutorials/cloud-get-started)
