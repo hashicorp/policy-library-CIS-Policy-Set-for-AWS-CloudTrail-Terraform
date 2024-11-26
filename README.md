@@ -1,6 +1,6 @@
 # Pre-written Sentinel Policies for AWS CIS Foundations Benchmarking
 
-Pre-written Sentinel policies for AWS CIS Benchmarking provide ready-to-use compliance checks to help ensure your AWS resources meet industry security standards.
+Pre-written Sentinel policies are ready to use compliance checks for CIS AWS Foundations Benchmarking v1.2, v1.4 and v3.0 to help enable your AWS resources meet industry security standards.
 
 At HashiCorp, we’re committed to making policy management easier for our customers. We understand that developing policies from scratch can be time-consuming and resource-intensive. To address this, we’re introducing our Prewritten Policy Libraries—expertly crafted, ready-to-use policies designed to streamline your compliance processes and enhance security across your infrastructure.
 
