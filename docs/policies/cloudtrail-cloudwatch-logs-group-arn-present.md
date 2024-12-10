@@ -19,7 +19,7 @@ CIS recommends for every CloudTrail trails should be integrated with Amazon Clou
 This policy checks whether CloudTrail trails are configured to send logs to CloudWatch Logs. 
 The policy fails if the `cloud_watch_logs_group_arn` attribute of the `aws_cloudtrail` resource is empty.
 
-This rule is covered by the [cloudtrail-cloudwatch-logs-group-arn-present](../../policies/cloudtrail-cloudwatch-logs-group-arn-present.sentinel) policy.
+This rule is covered by the [cloudtrail-cloudwatch-logs-group-arn-present](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/policies/cloudtrail-cloudwatch-logs-group-arn-present.sentinel) policy.
 
 ## Policy Results (Pass)
 ```bash

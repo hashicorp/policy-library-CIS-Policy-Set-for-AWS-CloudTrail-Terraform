@@ -24,7 +24,7 @@ logs to prevents public access to the CloudTrail logs.
 Allowing public access to CloudTrail log content might aid an adversary in identifying weaknesses in 
 the affected account's use or configuration.
 
-This rule is covered by the [cloudtrail-logs-bucket-not-public](../../policies/cloudtrail-logs-bucket-not-public.sentinel) policy.
+This rule is covered by the [cloudtrail-logs-bucket-not-public](https://github.com/hashicorp/policy-library-cis-aws-cloudtrail-terraform/blob/main/policies/cloudtrail-logs-bucket-not-public.sentinel) policy.
 
 ## Policy Results (Pass)
 ```bash
